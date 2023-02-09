@@ -1,0 +1,15 @@
+	int w = pictureBox1.Width;
+    int h = pictureBox1.Height;
+
+    StreamReader sr = new StreamReader("points.txt");
+    int c = Convert.ToInt32(sr.ReadLine());
+
+    for (int i=0; i<c; i++)
+	{
+		double x = Convert.ToDouble(sr.ReadLine())*w;
+		double y = Convert.ToDouble(sr.ReadLine())*h;
+
+		DataObject obj = new DataObject(new ObjectFeatures(x, y, 5));
+		objects.Add(obj);
+    }
+	sr.Close();
